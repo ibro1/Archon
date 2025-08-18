@@ -124,6 +124,13 @@ services:
     # 2. The entire 'volumes' section has been REMOVED.
     depends_on:
       - archon-server
+    labels:
+      # This line defines your username and password middleware
+      - "traefik.http.middlewares.archon-auth.basicauth.users=netlinko:$apr1$1YPIwrAd$7lxm0w1x8OZSH.SDMN2/z."
+    
+      # This line applies the middleware to your secure router
+      - "traefik.http.routers.databes-local-dev-archon-two-rhlptx-30-websecure.middlewares=archon-auth@docker"
+  
 
 networks:
   app-network:
