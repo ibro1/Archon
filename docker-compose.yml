@@ -126,7 +126,7 @@ services:
       - archon-server
     labels:
       # This line defines your username and password middleware
-      - "traefik.http.middlewares.archon-auth.basicauth.users=netlinko:$apr1$1YPIwrAd$7lxm0w1x8OZSH.SDMN2/z"
+      - "traefik.http.middlewares.archon-auth.basicauth.users=netlinko:$apr1$5jqVe3w3$1mYzjfuTW7GkuwL1d.Iq7/"
     
       # This line applies the middleware to your secure router
       - "traefik.http.routers.databes-local-dev-archon-two-rhlptx-30-websecure.middlewares=archon-auth@docker"
